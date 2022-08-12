@@ -13,7 +13,7 @@ class CryptocurrencyRepository {
     initTables = async () => {
       await this.connection.execute({
         sql: `
-          CREATE TABLE IF NOT EXISTS 'latestCryptocurrencies' (
+          CREATE TABLE IF NOT EXISTS latestCryptocurrencies (
             cryptocurrencyName varchar(255) NOT NULL,
             timestamp timestamp NOT NULL,
             coinpaprikaValue double,
