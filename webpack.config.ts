@@ -5,7 +5,9 @@ import nodeExternals from 'webpack-node-externals';
 
 import dotenv from 'dotenv';
 
-const env = dotenv.config().parsed;
+const env = dotenv.config({
+  path: process.env.NODE_ENV === 'development' ? '.dev.env' : '.prod.env',
+}).parsed;
 
 const config: Configuration = {
   mode: process.env.NODE_ENV as 'development' | 'production' || 'development',
