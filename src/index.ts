@@ -10,7 +10,7 @@ import CryptocurrencyRepository from './repositories/cryptocurrency';
 
 const app = express();
 
-const PORT = 3103;
+const PORT = process.env.PORT || 3103;
 
 const main = async () => {
   const db = await Database.init();
